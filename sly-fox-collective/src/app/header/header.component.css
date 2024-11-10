@@ -19,10 +19,8 @@
     padding: 1rem 2rem;
     background-color: #989592;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    /*position: fixed;*/
+ 
     width: 100%;
     z-index: 1000;
     height: 100px; /* Fixed header height */
