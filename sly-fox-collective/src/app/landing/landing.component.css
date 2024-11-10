@@ -1,0 +1,88 @@
+.event-image {
+    width: 75%;
+    height: auto;
+    display: block;
+}
+
+.gray-container-background {
+    width: 100%; /* Same width as image */
+    height: 100vh; /* This will match your image height - adjust as needed */
+    /* or use a specific pixel height to match your image exactly */
+    background-color: #716d69; /* or any color you want */
+}
+
+.peach-container-background {
+    width: 100%;
+    height: 20vh;
+    background-color: #f6e7d8;
+}
+
+.mint-container-background {
+    width: 100%;
+    height: 200vh;
+    background-color: #dfe6d9;
+}
+
+.white-container-background {
+    width: 100%;
+    height: 50vh;
+    background-color: #ffffff;
+}
+/* New styles for overlay positioning */
+.landing-page-container {
+    position: relative;
+    width: 100%;
+}
+
+.background-layers {
+    position: relative;
+    z-index: 1;
+}
+
+.overlay-containers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none; /* Allows clicking through to background if needed */
+}
+
+/* Example overlay boxes - customize as needed */
+.overlay-box {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+    border-radius: 10px;
+    pointer-events: auto; /* Makes this box clickable */
+}
+
+/* Position each overlay box individually */
+.box1 {
+    top: 50vh;
+    left: 10%;
+    width: 50em;
+    height: 50em;
+    background-color: rgba(240, 212, 186, 0.8);
+}
+
+
+/*
+.box2 {
+    top: 50vh;
+    right: 10%;
+    width: 400px;
+    height: 300px;
+    background-color: rgba(246, 231, 216, 0.7); 
+}
+
+.box3 {
+    top: 120vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 250px;
+    background-color: rgba(223, 230, 217, 0.7); 
+}
+
+*/
