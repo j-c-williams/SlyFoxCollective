@@ -1,39 +1,39 @@
 <div class="landing-page-container">
-    <!-- Large orange overlay moved outside of hero section -->
-    <div class="large-orange-overlay">
-      <span class="large-overlay-text">
-        We specialize in designing and
-        executing events that showcase
-        each client's unique style.
-        Whether it is a large corporate
-        meeting or a VIP weekend,
-        SlyFox Collective can bring
-        your vision to life! Let us craft
-        something clever for you.
-      </span>
-    </div>
-  
     <!-- Hero Section -->
     <section class="hero-section">
-      <div class="background-image">
-        <img src="../../assets/images/landingPageBackground.JPG" alt="Landing Background">
-        <div class="overlay-gradient"></div>
-      </div>
-  
-      <div class="hero-content">
-        <div class="text-container">
-          <div class="orange-overlay-box">
-            <div class="main-text">
-              <h1>
-                <span class="crafting">crafting clever</span>
-                <span class="dynamic-text" [class.fade-in]="isVisible" [class.fade-out]="!isVisible">
-                  {{ currentText }}
-                </span>
-              </h1>
-            </div>
-          </div>
+        <div class="background-image">
+            <img src="../../assets/images/landingPageBackground.JPG" alt="Landing Background">
+            <div class="overlay-gradient"></div>
         </div>
-      </div>
+
+        <div class="hero-content">
+            <div class="text-container">
+                <div class="orange-overlay-box">
+                    <div class="main-text">
+                        <h1>
+                            <span class="crafting">crafting clever</span>
+                            <span class="dynamic-text" [class.fade-in]="isVisible" [class.fade-out]="!isVisible">
+                                {{ currentText }}
+                            </span>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Banner Section -->
+    <section class="info-banner">
+        <div class="banner-content">
+            <div class="banner-text">
+                We specialize in designing and executing events that showcase each client's unique style.
+                Whether it is a large corporate meeting or a VIP weekend, SlyFox Collective can bring
+                your vision to life!
+            </div>
+            <div class="banner-cta">
+                <a [routerLink]="'/connect'" class="cta-button">Let's Craft Something Clever</a>
+            </div>
+        </div>
     </section>
   
     <!-- Services Preview Section -->
@@ -49,8 +49,8 @@
   
         <div class="service-card">
           <div class="card-content">
-            <h3>Our People</h3>
-            <p>Meet the incredible people working to make this women-owned business a reality.</p>
+            <h3>Women Owned</h3>
+            <p>With 33 collective years of event and recognition experiences, our team specializes in the little details that make all the difference.</p>
             <button [routerLink]="'/meet'" class="learn-more">Learn More →</button>
           </div>
         </div>
