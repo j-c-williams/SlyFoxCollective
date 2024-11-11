@@ -1,23 +1,55 @@
 <div class="landing-page-container">
-    <!-- Background layers -->
-    <div class="background-layers">
-      <img src="../../assets/images/landingPageBackground.JPG" class="event-image" alt="Landing Background">
-      <div class="gray-container-background"></div>
-      <div class="peach-container-background"></div>
-      <div class="mint-container-background"></div>
-      <div class="white-container-background"></div>
+  <section class="hero-section">
+    <div class="background-image">
+      <img src="../../assets/images/landingPageBackground.JPG" alt="Landing Background">
+      <div class="overlay-gradient"></div>
     </div>
-  
-    <!-- Overlay containers -->
-    <div class="overlay-containers">
-      <div class="overlay-box box1">
-        <!-- Content for first overlay box -->
+
+    <div class="hero-content">
+      <div class="large-orange-overlay">
+        <span class="large-overlay-text">We specialize in designing and
+        executing events that showcase
+        each client's unique style.
+        Whether it is a large corporate
+        meeting or a VIP weekend,
+        SlyFox Collective can bring
+        your vision to life! Let us craft
+        someting clever for you.</span>
       </div>
-      <div class="overlay-box box2">
-        <!-- Content for second overlay box -->
-      </div>
-      <div class="overlay-box box3">
-        <!-- Content for third overlay box -->
+      <div class="text-container">
+        <div class="orange-overlay-box">
+          <div class="main-text">
+            <h1>
+              <span class="crafting">crafting clever</span>
+              <span class="dynamic-text" [class.fade-in]="isVisible" [class.fade-out]="!isVisible">
+                {{ currentText }}
+              </span>
+            </h1>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
+
+
+  <!-- Services Preview Section -->
+  <section class="services-preview">
+    <div class="content-wrapper">
+      <div class="service-card">
+        <div class="card-content">
+          <h3>Our Services</h3>
+          <p>Elevate your business gatherings with our strategic planning and meticulous attention to detail.</p>
+          <button [routerLink]="'/services'" class="learn-more">Learn More →</button>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="card-content">
+          <h3>Our People</h3>
+          <p>Meet the incredible people working to make this women-owned business a reality.</p>
+          <button [routerLink]="'/meet'" class="learn-more">Learn More →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

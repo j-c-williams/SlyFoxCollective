@@ -1,88 +1,384 @@
-.event-image {
-    width: 75%;
-    height: auto;
+@font-face {
+    font-family: 'Alfath';
+    src: url('../../assets/fonts/Alfath_Signature.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Quicksand';
+    src: url('../../assets/fonts/Quicksand_Book.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Base Layout */
+.landing-page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+.hero-section {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.background-image {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.background-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.background-image .overlay-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right bottom,
+            rgba(113, 109, 105, 0.8) 0%,
+            rgba(246, 231, 216, 0.6) 100%);
+}
+
+/* Hero Content */
+.hero-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+/* Large Overlay */
+.large-orange-overlay {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 800px;
+    height: 600px;
+    background-color: rgba(255, 212, 184, 0.8);
+    border-radius: 0.25rem;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem;
+}
+
+.large-overlay-text {
+    font-family: 'Quicksand';
+    color: rgb(49, 49, 49);
+    font-size: 2.5rem;
+    line-height: 1.4;
+    text-align: left;
+    display: block;
+    max-width: 100%;
+}
+
+/* Small Overlay */
+.hero-content .text-container {
+    position: absolute;
+    width: 500px;
+    right: 5%;
+    top: 70%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.hero-content .orange-overlay-box {
+    background-color: rgba(255, 212, 184, 0.8);
+    border-radius: 0.25rem;
+    padding: 3rem;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    height: 300px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content .main-text {
+    text-align: center;
+    width: 100%;
+}
+
+.hero-content .main-text h1 {
+    font-size: 4.5rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    color: #716d69;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.hero-content .main-text .crafting {
     display: block;
 }
 
-.gray-container-background {
-    width: 100%; /* Same width as image */
-    height: 100vh; /* This will match your image height - adjust as needed */
-    /* or use a specific pixel height to match your image exactly */
-    background-color: #716d69; /* or any color you want */
+.crafting {
+    font-family: 'Alfath';
+    color: rgb(49, 49, 49);
 }
 
-.peach-container-background {
-    width: 100%;
-    height: 20vh;
-    background-color: #f6e7d8;
+.hero-content .main-text .dynamic-word {
+    display: block;
+    color: #4a4745;
 }
 
-.mint-container-background {
-    width: 100%;
-    height: 200vh;
-    background-color: #dfe6d9;
+/* Text Animation */
+.fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
 }
 
-.white-container-background {
-    width: 100%;
-    height: 50vh;
-    background-color: #ffffff;
-}
-/* New styles for overlay positioning */
-.landing-page-container {
-    position: relative;
-    width: 100%;
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
 }
 
-.background-layers {
-    position: relative;
-    z-index: 1;
+.static-text {
+    display: inline-block;
+    margin-right: 0.5rem;
 }
 
-.overlay-containers {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    pointer-events: none; /* Allows clicking through to background if needed */
+.dynamic-text {
+    display: inline-block;
+    font-family: 'Alfath';
+    color: rgb(49, 49, 49);
 }
 
-/* Example overlay boxes - customize as needed */
-.overlay-box {
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
-    border-radius: 10px;
-    pointer-events: auto; /* Makes this box clickable */
+/* Services Preview Section */
+.services-preview {
+    background-color: rgb(223, 230, 217);
+    padding: 6rem 0;
 }
 
-/* Position each overlay box individually */
-.box1 {
-    top: 50vh;
-    left: 10%;
-    width: 50em;
-    height: 50em;
-    background-color: rgba(240, 212, 186, 0.8);
+.services-preview .content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
 }
 
-
-/*
-.box2 {
-    top: 50vh;
-    right: 10%;
-    width: 400px;
-    height: 300px;
-    background-color: rgba(246, 231, 216, 0.7); 
+.services-preview .service-card {
+    background: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.box3 {
-    top: 120vh;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 500px;
-    height: 250px;
-    background-color: rgba(223, 230, 217, 0.7); 
+.services-preview .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
-*/
+.services-preview .service-card .card-content {
+    padding: 2rem;
+}
+
+.services-preview .service-card h3 {
+    color: #716d69;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.services-preview .service-card p {
+    color: #716d69;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.services-preview .service-card .learn-more {
+    color: #716d69;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.services-preview .service-card .learn-more:hover {
+    text-decoration: underline;
+    transform: translateX(5px);
+}
+
+.learn-more {
+    cursor: pointer;
+    color: #716d69;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.2s ease;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.learn-more:hover {
+    text-decoration: underline;
+    transform: translateX(5px);
+}
+
+/* Media Queries */
+@media (max-width: 1440px) {
+    .large-orange-overlay {
+        width: 700px;
+        height: 500px;
+        padding: 3rem;
+    }
+
+    .large-overlay-text {
+        font-size: 2.2rem;
+    }
+
+    .hero-content .text-container {
+        width: 450px;
+    }
+
+    .hero-content .orange-overlay-box {
+        width: 450px;
+        height: 280px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .large-orange-overlay {
+        width: 600px;
+        height: 450px;
+        padding: 2.5rem;
+    }
+
+    .large-overlay-text {
+        font-size: 2rem;
+    }
+
+    .hero-content .text-container {
+        width: 400px;
+        right: 3%;
+    }
+
+    .hero-content .orange-overlay-box {
+        width: 400px;
+        height: 260px;
+    }
+
+    .hero-content .main-text h1 {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .large-orange-overlay {
+        width: 500px;
+        height: 400px;
+        top: 3%;
+        left: 3%;
+        padding: 2rem;
+    }
+
+    .large-overlay-text {
+        font-size: 1.8rem;
+    }
+
+    .hero-content .text-container {
+        width: 350px;
+        right: 2%;
+    }
+
+    .hero-content .orange-overlay-box {
+        width: 350px;
+        height: 240px;
+        padding: 2rem;
+    }
+
+    .hero-content .main-text h1 {
+        font-size: 3rem;
+    }
+
+    .services-preview .content-wrapper {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 768px) {
+    .large-orange-overlay {
+        width: 400px;
+        height: 350px;
+        padding: 1.8rem;
+    }
+
+    .large-overlay-text {
+        font-size: 1.5rem;
+    }
+
+    .hero-content .text-container {
+        width: 300px;
+        top: 75%;
+    }
+
+    .hero-content .orange-overlay-box {
+        width: 300px;
+        height: 220px;
+        padding: 1.5rem;
+    }
+
+    .hero-content .main-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .services-preview {
+        padding: 4rem 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .large-orange-overlay {
+        width: 90%;
+        height: 300px;
+        left: 5%;
+        top: 2%;
+        padding: 1.5rem;
+    }
+
+    .large-overlay-text {
+        font-size: 1.3rem;
+    }
+
+    .hero-content .text-container {
+        width: 90%;
+        right: 5%;
+        top: 70%;
+    }
+
+    .hero-content .orange-overlay-box {
+        width: 100%;
+        height: 200px;
+        padding: 1.2rem;
+    }
+
+    .hero-content .main-text h1 {
+        font-size: 2rem;
+    }
+
+    .services-preview .content-wrapper {
+        gap: 1.5rem;
+    }
+}
