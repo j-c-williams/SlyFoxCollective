@@ -120,17 +120,12 @@
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        top: 0.5rem;
+        top: 0rem;
         z-index: 1001;
     }
 
     .mobile-logo-container .logo {
-        height: 4em;
-    }
-
-    /* Hide mobile logo when menu is active */
-    .nav-buttons.active + .mobile-logo-container {
-        display: none;
+        height: 5em;
     }
 
     /* Hamburger menu button */
