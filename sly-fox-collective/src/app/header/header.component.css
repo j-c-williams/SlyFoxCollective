@@ -47,6 +47,10 @@
     z-index: 1001;
 }
 
+.mobile-logo-container {
+    display: none;
+}
+
 .logo-link {
     display: inline-block;
     cursor: pointer;
@@ -77,14 +81,13 @@
     font-weight: 300;
     font-size: 18px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: background-color 0.2s ease;
     text-transform: lowercase;
     letter-spacing: 2px;
 }
 
 .nav-button:hover {
     background-color: #f5f5f5;
-    transform: translateY(-1px);
 }
 
 .nav-button.active {
@@ -106,17 +109,28 @@
         position: relative;
     }
 
-    /* Logo adjustments */
-    .logo-container {
+    /* Hide desktop logo in mobile nav menu */
+    .nav-buttons .logo-container {
+        display: none;
+    }
+
+    /* Show mobile logo */
+    .mobile-logo-container {
+        display: block;
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        top: -3rem;
+        top: 0.5rem;
+        z-index: 1001;
     }
 
-    .logo {
+    .mobile-logo-container .logo {
         height: 4em;
-        top: 0.5em;
+    }
+
+    /* Hide mobile logo when menu is active */
+    .nav-buttons.active + .mobile-logo-container {
+        display: none;
     }
 
     /* Hamburger menu button */

@@ -9,22 +9,20 @@
     </button>
 
     <!-- Navigation Buttons -->
-    <nav class="nav-buttons" [class.active]="isMenuOpen">  <!-- Added [class.active] here -->
+    <nav class="nav-buttons" [class.active]="isMenuOpen">
         <!-- Left Side Buttons -->
         <div class="left-buttons">
             <button [routerLink]="'/meet'" 
-                    routerLinkActive="active" 
                     class="nav-button">
                 meet the foxes
             </button>
             <button [routerLink]="'/services'" 
-                    routerLinkActive="active" 
                     class="nav-button">
                 services
             </button>
         </div>
 
-        <!-- Logo -->
+        <!-- Logo for desktop nav -->
         <div class="logo-container">
             <a [routerLink]="'/landing'" class="logo-link">
                 <img src="../../assets/images/slyfoxLogoScreenVersion.png" 
@@ -36,15 +34,22 @@
         <!-- Right Side Buttons -->
         <div class="right-buttons">
             <button [routerLink]="'/gallery'" 
-                    routerLinkActive="active" 
                     class="nav-button">
                 gallery
             </button>
             <button [routerLink]="'/connect'" 
-                    routerLinkActive="active" 
                     class="nav-button">
                 connect
             </button>
         </div>
     </nav>
+
+    <!-- Mobile Logo -->
+    <div class="mobile-logo-container">
+        <a [routerLink]="'/landing'" class="logo-link">
+            <img src="../../assets/images/slyfoxLogoScreenVersion.png" 
+                 alt="SlyFox Logo" 
+                 class="logo">
+        </a>
+    </div>
 </header>
