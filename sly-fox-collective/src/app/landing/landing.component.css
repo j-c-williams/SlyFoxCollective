@@ -65,7 +65,7 @@
 .hero-content .text-container {
     position: absolute;
     width: 500px;
-    right: 33%;
+    right: 15%;
     top: 40%;
     transform: translateY(-50%);
     z-index: 11;
@@ -79,7 +79,7 @@
     backdrop-filter: blur(5px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     height: 23rem;
-    width: 50rem;
+    width: 35rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -92,7 +92,7 @@
 }
 
 .hero-content .main-text h1 {
-    font-size: 4.5rem;
+    font-size: 5.5rem;
     font-weight: 300;
     margin-bottom: 1.5rem;
     color: rgb(49, 49, 49);
@@ -256,63 +256,42 @@
     transform: translateX(5px);
 }
 
-/* Media Queries */
-@media (max-width: 1440px) {
-    .hero-content .text-container {
-        width: 20rem;
-        right: -5%;
+/* Remove all existing media queries and replace with just this one */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 80vh;
     }
 
+    /* Center the text container and make it almost full width */
+    .hero-content .text-container {
+        width: 90%;
+        right: 5%;
+        top: 40%;
+    }
+
+    /* Adjust the orange box for mobile */
     .hero-content .orange-overlay-box {
-        width: 20rem;
+        width: 100%;
         height: 15rem;
-        padding: 2.5rem;
+        padding: 1.5rem;
     }
 
+    /* Scale down the text size */
     .hero-content .main-text h1 {
-        font-size: 2.8rem;
-    }
-}
-
-@media (max-width: 1200px) {
-    .hero-content .text-container {
-        width: 18rem;
-        right: -3%;
+        font-size: 3rem;
     }
 
-    .hero-content .orange-overlay-box {
-        width: 18rem;
-        height: 14rem;
-        padding: 2rem;
+    /* Adjust services section spacing */
+    .services-preview {
+        padding: 4rem 0;
     }
-
-    .hero-content .main-text h1 {
-        font-size: 2.5rem;
-    }
-}
-
-@media (max-width: 992px) {
-    .hero-content .text-container {
-        width: 16rem;
-        right: 0%;
-        top: 25%;
-    }
-
-    .hero-content .orange-overlay-box {
-        width: 16rem;
-        height: 13rem;
-        padding: 1.8rem;
-    }
-
-    .hero-content .main-text h1 {
-        font-size: 2.2rem;
-    }
-
+    
     .services-preview .content-wrapper {
         grid-template-columns: 1fr;
         max-width: 600px;
     }
 
+    /* Banner adjustments for mobile */
     .banner-content {
         flex-direction: column;
         text-align: center;
@@ -320,70 +299,11 @@
     }
 
     .banner-text {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
     .banner-cta {
         text-align: center;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero-section {
-        height: 80vh;
-    }
-
-    .hero-content .text-container {
-        width: 90%;
-        right: 5%;
-        top: 25%;
-    }
-
-    .hero-content .orange-overlay-box {
-        width: 100%;
-        height: 12rem;
-        padding: 1.5rem;
-    }
-
-    .hero-content .main-text h1 {
-        font-size: 2rem;
-    }
-
-    .services-preview {
-        padding: 4rem 0;
-    }
-
-    .banner-text {
-        font-size: 1.2rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .hero-section {
-        height: 75vh;
-    }
-
-    .hero-content .text-container {
-        width: 90%;
-        right: 5%;
-        top: 20%;
-    }
-
-    .hero-content .orange-overlay-box {
-        width: 100%;
-        height: 11rem;
-        padding: 1.2rem;
-    }
-
-    .hero-content .main-text h1 {
-        font-size: 1.8rem;
-    }
-
-    .services-preview .content-wrapper {
-        gap: 1.5rem;
-    }
-
-    .banner-text {
-        font-size: 1.1rem;
+        margin: 0 auto;
     }
 }
