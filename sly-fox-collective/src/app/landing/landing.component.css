@@ -328,6 +328,7 @@
 
 .gallery-item:hover .gallery-overlay {
     opacity: 1;
+    cursor: default;
 }
 
 .gallery-overlay-text {
