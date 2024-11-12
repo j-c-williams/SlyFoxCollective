@@ -1,19 +1,50 @@
-<header class="header">
-    <nav class="nav-buttons">
-      <div class="left-buttons">
-        <button class="nav-button" [routerLink]="'/meet'">Meet the Foxes</button>
-        <button class="nav-button" [routerLink]="'/services'">Services</button>
-      </div>
-      
-      <div class="logo-container">
-        <a [routerLink]="'/landing'" class="logo-link">
-          <img src="../../assets/images/slyfoxLogoScreenVersion.png" class="logo" alt="Sly Fox Logo">
-        </a>
-      </div>
-      
-      <div class="right-buttons">
-        <button class="nav-button" [routerLink]="'/gallery'">Gallery</button>
-        <button class="nav-button" [routerLink]="'/connect'">Connect</button>
-      </div>
+<header class="header" [class.scrolled]="!isHeaderVisible">
+    <!-- Hamburger Menu Button -->
+    <button class="menu-toggle" 
+            [class.active]="isMenuOpen"
+            (click)="toggleMenu(); $event.stopPropagation()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Navigation Buttons -->
+    <nav class="nav-buttons" [class.active]="isMenuOpen">  <!-- Added [class.active] here -->
+        <!-- Left Side Buttons -->
+        <div class="left-buttons">
+            <button [routerLink]="'/meet'" 
+                    routerLinkActive="active" 
+                    class="nav-button">
+                meet the foxes
+            </button>
+            <button [routerLink]="'/services'" 
+                    routerLinkActive="active" 
+                    class="nav-button">
+                services
+            </button>
+        </div>
+
+        <!-- Logo -->
+        <div class="logo-container">
+            <a [routerLink]="'/landing'" class="logo-link">
+                <img src="../../assets/images/slyfoxLogoScreenVersion.png" 
+                     alt="SlyFox Logo" 
+                     class="logo">
+            </a>
+        </div>
+
+        <!-- Right Side Buttons -->
+        <div class="right-buttons">
+            <button [routerLink]="'/gallery'" 
+                    routerLinkActive="active" 
+                    class="nav-button">
+                gallery
+            </button>
+            <button [routerLink]="'/connect'" 
+                    routerLinkActive="active" 
+                    class="nav-button">
+                connect
+            </button>
+        </div>
     </nav>
-  </header>
+</header>

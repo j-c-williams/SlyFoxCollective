@@ -3,70 +3,71 @@
     src: url('../../assets/fonts/Quicksand_Book.otf') format('opentype');
     font-weight: 300;
     font-style: normal;
-  }
-  
-  /* Reset margins and ensure full width */
-  * {
+}
+
+/* Reset margins and ensure full width */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  .header {
+}
+
+/* Header Styles */
+.header {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 1rem 2rem;
     background-color: #bbb7b3;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    /*position: fixed;*/
- 
     width: 100%;
     z-index: 1000;
-    height: 100px; /* Fixed header height */
-  }
-  
-  .nav-buttons {
+    height: 100px;
+}
+
+.nav-buttons {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2rem;
     width: 100%;
     position: relative;
-  }
-  
-  .left-buttons, .right-buttons {
+}
+
+.left-buttons, .right-buttons {
     display: flex;
     gap: 1rem;
     align-items: center;
-  }
-  
-  .logo-container {
+}
+
+/* Logo Styles */
+.logo-container {
     padding: 0rem;
     position: relative;
-    z-index: 1001; /* Make logo appear above header */
-  }
-  
-  .logo-link {
+    z-index: 1001;
+}
+
+.logo-link {
     display: inline-block;
     cursor: pointer;
     transition: transform 0.2s ease;
     position: relative;
-  }
-  
-  .logo-link:hover {
+}
+
+.logo-link:hover {
     transform: scale(1.05);
-  }
-  
-  .logo {
-    height: 6.5em; /* Logo bigger than header */
+}
+
+.logo {
+    height: 6.5em;
     width: auto;
     object-fit: contain;
     position: relative;
-    top: 1em; /* Extends below header */
-  }
-  
-  .nav-button {
+    top: 1em;
+}
+
+/* Navigation Button Styles */
+.nav-button {
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 4px;
@@ -79,76 +80,117 @@
     transition: all 0.2s ease;
     text-transform: lowercase;
     letter-spacing: 2px;
-  }
-  
-  .nav-button:hover {
+}
+
+.nav-button:hover {
     background-color: #f5f5f5;
     transform: translateY(-1px);
-  }
-  
-  /* Add active state for buttons */
-  .nav-button.active {
+}
+
+.nav-button.active {
     background-color: #f0f0f0;
     color: #000000;
-  }
-  
-  /* Mobile responsive styles */
-  @media (max-width: 768px) {
+}
+
+/* Hamburger Menu Button (hidden by default) */
+.menu-toggle {
+    display: none;
+}
+
+/* Mobile Styles - Everything 768px and below */
+@media (max-width: 768px) {
+    /* Header adjustments */
     .header {
-      padding: 1rem;
+        padding: 0.5rem;
+        height: 80px;
+        position: relative;
     }
-  
-    .nav-buttons {
-      flex-direction: column;
-      gap: 1rem;
-    }
-  
-    .left-buttons, .right-buttons {
-      flex-direction: column;
-      width: 100%;
-      text-align: center;
-    }
-  
+
+    /* Logo adjustments */
     .logo-container {
-      padding: 1rem 0;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -3rem;
     }
-  
+
     .logo {
-      height: 80px; /* Slightly smaller logo on mobile */
-      top: 5px; /* Less overflow on mobile */
+        height: 4em;
+        top: 0.5em;
     }
-  
+
+    /* Hamburger menu button */
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 1.5rem;
+        right: 1rem;
+        z-index: 1002;
+        background: none;
+        border: none;
+        padding: 0.5rem;
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #333333;
+        margin: 5px 0;
+        transition: all 0.3s ease;
+    }
+
+    /* Hamburger animation */
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    /* Mobile Navigation Menu */
+    .nav-buttons {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: #bbb7b3;
+        padding: 1rem 0;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .nav-buttons.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    /* Mobile Navigation Buttons */
+    .left-buttons,
+    .right-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.5rem;
+    }
+
     .nav-button {
-      width: 100%;
-      padding: 0.75rem 1rem;
+        width: 90%;
+        margin: 0 auto;
+        padding: 0.75rem;
+        font-size: 16px;
+        text-align: center;
     }
-  }
-  
-  /* Optional: Add smooth scroll behavior */
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  /* Optional: Add some animation for the header on scroll */
-  @media (min-width: 769px) {
-    .header {
-      transition: transform 0.3s ease;
-    }
-  
-    .header.scrolled {
-      transform: translateY(-100%);
-    }
-  
-    .header.scroll-up {
-      transform: translateY(0);
-    }
-  }
-  
-  /* Optional: Ensure content below header doesn't get hidden */
-  :root {
-    --header-height: 80px;
-  }
-  
-  main {
-    padding-top: var(--header-height);
-  }
+}
