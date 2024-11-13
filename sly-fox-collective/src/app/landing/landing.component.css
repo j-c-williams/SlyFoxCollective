@@ -65,7 +65,7 @@
 .hero-content .text-container {
     position: absolute;
     width: 500px;
-    right: 15%;
+    right: 8%;
     top: 40%;
     transform: translateY(-50%);
     z-index: 11;
@@ -131,7 +131,8 @@
 
 .dynamic-text {
     display: inline-block;
-    font-family: 'Alfath';
+    font-family: 'Quicksand';
+    font-size: 3.8rem;
     color: rgb(49, 49, 49);
 }
 
@@ -384,7 +385,6 @@
     }
 }
 
-/* Remove all existing media queries and replace with just this one */
 @media (max-width: 768px) {
     .hero-section {
         height: 80vh;
@@ -407,6 +407,10 @@
     /* Scale down the text size */
     .hero-content .main-text h1 {
         font-size: 3rem;
+    }
+
+    .dynamic-text {
+        font-size: 2.5rem;
     }
 
     /* Adjust services section spacing */
