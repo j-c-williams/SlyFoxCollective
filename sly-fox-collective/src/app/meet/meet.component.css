@@ -1,73 +1,12 @@
-/* Font Faces */
-@font-face {
-    font-family: 'Alfath';
-    src: url('../../assets/fonts/Alfath_Signature.otf');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Quicksand';
-    src: url('../../assets/fonts/Quicksand_Book.otf');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/* Base Layout */
-.meet-page-container {
-    position: relative;
-    min-height: 100vh;
-    width: 1200px;
-}
-
-/* Hero Section */
-.hero-section {
-    height: 85vh;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-}
-
-.background-image {
-    position: relative;
-    height: 100%;
-    width: 100%;
-}
-
-.background-image img {
-    width: 100%;
-    height: 100%;
-    object-position: center bottom;
-    object-fit: cover;
-}
-
-.background-image {
-    position: absolute;
-    inset: 0;
-}
-
-/* Hero Content */
-.hero-content {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
-    z-index: 2;
-}
-
-/* Text Container and Overlay Box */
+/* Component-specific Text Container positioning */
 .hero-content .text-container {
-    position: absolute;
-    width: 500px;
     right: -5%;
     top: 18%;
     transform: translateY(-50%);
-    z-index: 11;
 }
 
-.hero-content .gay-overlay-box {
+/* Gray Overlay Box */
+.hero-content .gray-overlay-box {
     background-color: rgba(152, 152, 152, 0.65);
     border-radius: 0.25rem;
     padding: 3rem;
@@ -82,6 +21,7 @@
     align-items: center;
 }
 
+/* Component-specific Text Styles */
 .hero-content .main-text {
     text-align: center;
     width: 100%;
@@ -98,43 +38,15 @@
     gap: 0.5rem;
 }
 
-/* Text Styles */
-.crafting {
-    font-family: 'Alfath';
-    color: rgb(49, 49, 49);
-}
-
-.hero-content .main-text .dynamic-word {
-    display: block;
-    color: #4a4745;
-}
-
-/* Text Animation */
-.fade-in {
-    opacity: 1;
-    transition: opacity 0.5s ease-in;
-}
-
-.fade-out {
-    opacity: 0;
-    transition: opacity 0.5s ease-out;
-}
-
-.static-text {
-    display: inline-block;
-    margin-right: 0.5rem;
-}
-
+/* Component-specific Dynamic Text */
 .dynamic-text {
     display: inline-block;
-    font-family: 'Quicksand';
     font-size: 3.8rem;
-    color: rgb(49, 49, 49);
     position: relative;
     width: 100%;
-    height: 5rem; 
+    height: 5rem;
     overflow: hidden;
-    line-height: 1; 
+    line-height: 1;
 }
 
 .dynamic-text span {
@@ -142,10 +54,11 @@
     position: absolute;
     width: 100%;
     text-align: center;
-    top: 15%; 
-    transform: translateY(-50%); 
+    top: 15%;
+    transform: translateY(-50%);
 }
 
+/* Team Icons */
 .team-icons {
     position: absolute;
     inset: 0;
@@ -154,8 +67,8 @@
 
 .team-icon {
     position: absolute;
-    width: 120px;  /* Much larger width */
-    height: auto;  /* Let height adjust automatically */
+    width: 120px;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -164,6 +77,6 @@
 
 .icon-image {
     width: 100%;
-    height: auto; /* Let the height adjust to maintain aspect ratio */
-    object-fit: contain; /* Back to contain to prevent cropping */
+    height: auto;
+    object-fit: contain;
 }

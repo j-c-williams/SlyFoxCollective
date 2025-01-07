@@ -1,68 +1,194 @@
-/* Global Styles */
+/* Global Font Faces */
+@font-face {
+  font-family: 'Alfath';
+  src: url('./assets/fonts/Alfath_Signature.otf');
+  font-weight: normal;
+  font-style: normal;
+}
 
+@font-face {
+  font-family: 'Quicksand';
+  src: url('./assets/fonts/Quicksand_Book.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Global Reset and Base Styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Quicksand', 'Arial', sans-serif;
+  background-color: #eddec5;
+  color: #333;
+  min-height: 100vh;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Quicksand', 'Verdana', sans-serif;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+p {
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Container Styles */
+.container {
+  width: 80%;
+  max-width: 1200px;
+  padding: 2rem;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Page Containers */
+.landing-page-container,
+.meet-page-container,
+.services-page-container {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+/* Common Hero Section */
+.hero-section {
+  height: 85vh;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  width: 100%;
+}
+
+/* Common Background Image */
+.background-image {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.background-image img {
+  width: 100%;
+  height: 100%;
+  object-position: center bottom;
+  object-fit: cover;
+}
+
+/* Common Hero Content */
+.hero-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+/* Common Text Container */
+.hero-content .text-container {
+  position: absolute;
+  width: 500px;
+  z-index: 11;
+}
+
+/* Common Text Styles */
+.crafting {
+  font-family: 'Alfath';
+  color: rgb(49, 49, 49);
+}
+
+.dynamic-text {
+  font-family: 'Quicksand';
+  color: rgb(49, 49, 49);
+}
+
+/* Animation Classes */
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+/* Buttons */
+button {
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Links */
+a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+/* Common Gallery Container */
+.gallery-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Common Section Headers */
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+  .page-container {
+    padding: 0 1rem;
   }
-  
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color: #eddec5;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    text-align: center;
+}
+
+@media (max-width: 768px) {
+  .hero-content .text-container {
+    width: 90%;
+    padding: 0 1rem;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Verdana', sans-serif;
-    color: #333;
-    margin-bottom: 1rem;
-  }
-  
-  p {
-    line-height: 1.6;
-    color: #555;
-  }
-  
-  /* Container */
+}
+
+@media (max-width: 480px) {
   .container {
-    width: 80%;
-    max-width: 1200px;
-    padding: 2rem;
-    margin: auto;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 95%;
+    padding: 1rem;
   }
-  
-  /* Buttons */
-  button {
-    padding: 0.8rem 1.2rem;
-    font-size: 1rem;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Links */
-  a {
-    color: #007bff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  a:hover {
-    color: #0056b3;
-  }
-  
+}
