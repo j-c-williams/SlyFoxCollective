@@ -5,7 +5,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 
 interface TeamMember {
   name: string;
-  position: { top: string; left: string; }; // For icon positioning
+  earsImage: string; 
 }
 
 @Component({
@@ -46,9 +46,18 @@ export class MeetComponent implements OnInit, OnDestroy {
   private platformId = inject(PLATFORM_ID);
   
   public teamMembers: TeamMember[] = [
-    { name: 'Angi', position: { top: '8%', left: '30%' } },
-    { name: 'Leah', position: { top: '19%', left: '69%' } },
-    { name: 'Holly', position: { top: '15.25%', left: '52.25%' } }
+    { 
+      name: 'Angi',
+      earsImage: '../../assets/images/angi_ears_overlay.png'
+    },
+    { 
+      name: 'Leah',
+      earsImage: '../../assets/images/leah_ears_overlay.png'
+    },
+    { 
+      name: 'Holly',
+      earsImage: '../../assets/images/holly_ears_overlay.png'
+    }
   ];
   
   public currentText: string = this.teamMembers[0].name;
@@ -65,9 +74,6 @@ export class MeetComponent implements OnInit, OnDestroy {
     return this.getCurrentMemberIndex(this.currentText) === index;
   }
 
-  public getIconPosition(index: number): { top: string; left: string; } {
-    return this.teamMembers[index].position;
-  }
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {

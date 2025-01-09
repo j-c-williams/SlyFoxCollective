@@ -1,15 +1,15 @@
 <div class="meet-page-container">
     <section class="hero-section">
         <div class="background-image">
-            <img src="../../assets/images/fox_team.jpg" alt="Meet Background">
-            <!-- Add icons with positioning -->
-            <div class="team-icons">
-                <div *ngFor="let member of teamMembers; let i = index"
-                     class="team-icon"
-                     [style.top]="getIconPosition(i).top"
-                     [style.left]="getIconPosition(i).left"
-                     [@iconFade]="isIconActive(i) ? 'visible' : 'hidden'">
-                    <img src="../../assets/images/fox_ears.png" alt="Fox Ears Icon" class="icon-image">
+            <div class="background-image">
+                <img src="../../assets/images/fox_team.jpg" alt="Meet Background">
+                <!-- Replace the dynamic positioning with fixed overlays -->
+                <div class="ears-overlays">
+                    <img *ngFor="let member of teamMembers; let i = index"
+                            [src]="member.earsImage"
+                            class="ears-overlay"
+                            [@iconFade]="isIconActive(i) ? 'visible' : 'hidden'"
+                            alt="Fox Ears Overlay">
                 </div>
             </div>
         </div>
