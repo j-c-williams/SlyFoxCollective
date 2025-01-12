@@ -67,6 +67,7 @@ p {
   max-width: 1200px;
   margin: 0 auto;
   overflow-x: hidden;
+  overflow: hidden;
 }
 
 /* Common Hero Section */
