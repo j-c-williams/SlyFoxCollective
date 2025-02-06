@@ -88,6 +88,14 @@
     transform: translateY(-2px);
 }
 
+.view-more-button {
+    background: rgb(49, 49, 49);
+}
+
+.view-more-button:hover {
+    background: rgb(69, 69, 69);
+}
+
 /* Services Preview Section */
 .services-preview {
     position: relative;
