@@ -13,7 +13,7 @@
 .copy-email-btn {
   background: none;
   border: none;
-  color: #ff9f68;
+  color: #ff782a;
   /* Customize the color */
   font-weight: bold;
   cursor: pointer;
@@ -22,7 +22,7 @@
 }
 
 .copy-email-btn:hover {
-  color: #ff7b42;
+  color: #ff5810;
 }
 
 /* Social Media Links */
