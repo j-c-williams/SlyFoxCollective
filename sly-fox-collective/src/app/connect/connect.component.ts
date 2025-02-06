@@ -9,4 +9,13 @@ import { Component } from '@angular/core';
 })
 export class ConnectComponent {
 
+
+  copyEmail() {
+    const email = "hello@slyfoxcollective.com";
+    navigator.clipboard.writeText(email).then(() => {
+      alert("Email address copied to clipboard!");
+    }).catch(err => {
+      console.error("Failed to copy email: ", err);
+    });
+  }
 }
