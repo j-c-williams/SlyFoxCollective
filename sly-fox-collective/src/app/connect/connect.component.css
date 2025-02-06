@@ -37,7 +37,7 @@
 .social-link {
   display: inline-block;
   padding: 1rem 2rem;
-  background: #ff9f68;
+  background: rgb(49, 49, 49);
   color: white;
   text-decoration: none;
   font-weight: bold;
@@ -46,5 +46,5 @@
 }
 
 .social-link:hover {
-  background: #e0895c;
+  background: rgb(69, 69, 69);
 }
