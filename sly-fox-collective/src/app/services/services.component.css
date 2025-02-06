@@ -1,18 +1,18 @@
-.background-image-service {
-    position: absolute;
-    inset: 0;
-    height: 95%;
-    width: 95%;
-    display: flex;
-    justify-content: flex-start;
-    padding-top: 3rem;
-    padding-right: 3rem;
+.services-page-container {
+    font-family: 'Quicksand', sans-serif;
+    color: #333;
+    background: #f9f5f0;
+    text-align: center;
 }
 
-.background-image-service > img {
+/* Hero Section */
+.hero-section {
+    position: relative;
+}
+
+.hero-image img {
     width: 100%;
-    height: 100%;
-    object-fit: contain;
+    display: block;
 }
 
 .hero-content .text-container {
@@ -46,6 +46,59 @@
     gap: 0.5rem;
 }
 
-.services-banner {
-    font-family: 'Quicksand';
+.overlay-text {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Sections */
+.title-section {
+    font-size: 6rem;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.services-section {
+    padding: 2rem 0;
+}
+
+.services-container {
+    background: rgba(255, 212, 184, 0.65);
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 700px;
+    margin: auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.services-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.services-container ul li {
+    margin: 0.5rem 0;
+}
+
+.service-images {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.service-images img {
+    width: 45%;
+    border-radius: 5px;
 }
