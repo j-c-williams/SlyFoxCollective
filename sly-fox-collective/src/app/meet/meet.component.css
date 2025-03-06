@@ -246,6 +246,26 @@
 }
 
 
+/* Mobile Carousel Section */    
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.headshot {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    
+}
+
+
+
 /* Mobile Responsive Design */
 @media (max-width: 768px) {
 
