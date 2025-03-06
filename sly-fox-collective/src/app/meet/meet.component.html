@@ -28,6 +28,9 @@
     <!-- Mobile Carousel (Swiper) Section -->
     <div class="mobile-carousel" *ngIf="isMobile">
         <swiper-container slides-per-view="1" space-between="10" navigation="true" pagination="false" loop="true" >
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+
             <swiper-slide *ngFor="let member of teamMembers; let i = index">
                 <img [src]="member.headshot" alt="{{ member.name }}'s Headshot" class="headshot" />
                 <div class="carousel-caption">{{ member.name }}</div>

@@ -175,6 +175,9 @@ a:hover {
   margin-bottom: 3rem;
 }
 
+:root {
+  --swiper-navigation-color: rgb(49, 49, 49);
+}
 
 /* Responsive Media Queries */
 @media (max-width: 1024px) {
