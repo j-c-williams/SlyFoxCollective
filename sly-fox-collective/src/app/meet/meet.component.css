@@ -221,8 +221,34 @@
     color: rgb(49, 49, 49);
 }
 
+.headshot {
+    width: 720px;
+}
+
+.carousel-caption {
+    font-size: 5rem;
+    font-family: 'Alfath';
+}
+
+
+.info-banner .banner-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-banner .banner-text {
+    flex: 1;
+}
+
+.info-banner .banner-cta {
+    margin-left: 20px
+}
+
+
 /* Mobile Responsive Design */
 @media (max-width: 768px) {
+
     .secondary-banner .banner-content {
         flex-direction: column;
         text-align: center;
@@ -251,5 +277,39 @@
         .panel-text {
             padding: 1rem;
         }
+    
+        .info-banner .banner-content {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    
+        .info-banner .banner-cta {
+            margin-left: 0;
+            margin-top: 15px;
+            width: 100%;
+            
+        }
+    
+        .info-banner .cta-button {
+            width: 100%;
+            text-align: center;
+            display: block;
+        }
         
+                .info-banner-2 .banner-content {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+        
+                .info-banner-2 .banner-cta {
+                    margin-left: 0;
+                    margin-top: 15px;
+                    width: 100%;
+                }
+        
+                .info-banner-2 .cta-button {
+                    width: 100%;
+                    text-align: center;
+                    display: block;
+                }
 }

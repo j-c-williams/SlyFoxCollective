@@ -1,14 +1,14 @@
 <div class="meet-page-container">
-    <section class="hero-section">
+    <!-- Hero Section for Desktop -->
+    <section class="hero-section" *ngIf="!isMobile">
         <div class="background-image">
-            <div class="background-image">
-                <img src="../../assets/images/fox_team.jpg" alt="Meet Background">
-                <div class="ears-overlays">
-                    <img *ngFor="let member of teamMembers; let i = index" [src]="member.earsImage" class="ears-overlay"
-                        [@iconFade]="isIconActive(i) ? 'visible' : 'hidden'" alt="Fox Ears Overlay">
-                </div>
+            <img src="../../assets/images/fox_team.jpg" alt="Meet Background" />
+            <div class="ears-overlays">
+                <img *ngFor="let member of teamMembers; let i = index" [src]="member.earsImage" class="ears-overlay"
+                    [@iconFade]="isIconActive(i) ? 'visible' : 'hidden'" alt="{{ member.name }}'s Fox Ears Overlay" />
             </div>
         </div>
+
         <div class="hero-content">
             <div class="text-container">
                 <div class="gray-overlay-box">
@@ -16,9 +16,7 @@
                         <h1>
                             <span class="crafting">Meet The Foxes</span>
                             <div class="dynamic-text">
-                                <span [@wheelRotate]="animationState">
-                                    {{ currentText }}
-                                </span>
+                                <span [@wheelRotate]="animationState">{{ currentText }}</span>
                             </div>
                         </h1>
                     </div>
@@ -27,14 +25,26 @@
         </div>
     </section>
 
+    <!-- Mobile Carousel (Swiper) Section -->
+    <div class="mobile-carousel" *ngIf="isMobile">
+        <swiper-container slides-per-view="1" space-between="10" navigation="true" pagination="false" loop="true" >
+            <swiper-slide *ngFor="let member of teamMembers; let i = index">
+                <img [src]="member.headshot" alt="{{ member.name }}'s Headshot" class="headshot" />
+                <div class="carousel-caption">{{ member.name }}</div>
+            </swiper-slide>
+        </swiper-container>
+    </div>
+
+    <!-- Info Banner Section -->
     <section class="info-banner">
         <div class="banner-content">
             <div class="banner-text">
-                Just like the clever foxes that inspire our name, we're resourceful and agile, navigating
-                the ever-changing landscape of events with ease. With eleven years together in our previous roles
-                creating events and recognition at Beachbody, Angi, Leah, and Holly have joined forces in an exciting
-                new adventure.
-                We are SlyFox Collective!
+                Just like the clever foxes that inspire our name, we're resourceful and agile, navigating the
+                ever-changing landscape of events with ease. With eleven years together in our previous roles creating
+                events and
+                recognition at Beachbody, Angi, Leah, and Holly have joined forces in an exciting new adventure. We are
+                SlyFox
+                Collective!
             </div>
             <div class="banner-cta">
                 <a [routerLink]="'/connect'" class="cta-button">Let's Work Together</a>
@@ -42,37 +52,48 @@
         </div>
     </section>
 
+    <!-- Alternating Panels Section -->
     <section class="alternating-panels">
         <div class="panel">
             <div class="panel-img">
-                <img src="../../assets/images/meet_the_foxes_2.jpg" alt="Corporate Event">
+                <img src="../../assets/images/meet_the_foxes_2.jpg" alt="Corporate Event" />
             </div>
             <div class="panel-text">
                 <h3>Dream Big</h3>
-                <p>Whether it's a corporate gathering, an incentive trip with a stunning backdrop, or an exciting festival,
-                    we thrive on challenges and love turning dreams into reality.</p>
+                <p>
+                    Whether it's a corporate gathering, an incentive trip with a stunning backdrop, or an exciting
+                    festival, we
+                    thrive on challenges and love turning dreams into reality.
+                </p>
             </div>
         </div>
+
         <div class="panel reverse">
             <div class="panel-img">
-                <img src="../../assets/images/fox_team_event_cropped.png" alt="Event Details">
+                <img src="../../assets/images/fox_team_event_cropped.png" alt="Event Details" />
             </div>
             <div class="panel-text">
                 <h3>Attention to Detail</h3>
-                <p>With a keen eye for detail and a commitment to excellence, we work closely with our clients to ensure
-                    that every occasion is not just an event, but a memorable adventure.</p>
+                <p>
+                    With a keen eye for detail and a commitment to excellence, we work closely with our clients to
+                    ensure that
+                    every occasion is not just an event, but a memorable adventure.
+                </p>
             </div>
         </div>
     </section>
 
+    <!-- Info Banner 2 Section -->
     <section class="info-banner-2">
         <div class="banner-content">
             <div class="banner-text">
-                Join us as we embark on a journey filled with creativity, innovation, and a dash
-                of fun - because at SlyFox Collective, we're not just planning events; we're crafting clever!
+                Join us as we embark on a journey filled with creativity, innovation, and a dash of fun - because at
+                SlyFox
+                Collective, we're not just planning events; we're crafting clever!
             </div>
             <div class="banner-cta">
                 <a [routerLink]="'/services'" class="cta-button">Learn More About Our Services</a>
             </div>
         </div>
     </section>
+</div>
