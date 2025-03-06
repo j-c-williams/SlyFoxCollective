@@ -57,7 +57,8 @@ export class MeetComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    if (isPlatformBrowser(this.platformId)) {
+    if (isPlatformBrowser(this.platformId) && !this.isMobile) {
+      this.checkMobile();
       this.startTextCycling();
     }
   }
@@ -70,6 +71,10 @@ export class MeetComponent implements OnInit, OnDestroy {
 
   public isIconActive(index: number): boolean {
     return this.getCurrentMemberIndex(this.currentText) === index;
+  }
+
+  public checkMobile() {
+    this.isMobile = window.innerWidth <= 768;
   }
 
   private getCurrentMemberIndex(name: string): number {
