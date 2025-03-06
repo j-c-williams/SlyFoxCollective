@@ -1,3 +1,5 @@
+@import 'swiper/swiper-bundle.css';
+
 /* Global Font Faces */
 @font-face {
   font-family: 'Alfath';
@@ -172,6 +174,7 @@ a:hover {
   text-align: center;
   margin-bottom: 3rem;
 }
+
 
 /* Responsive Media Queries */
 @media (max-width: 1024px) {
