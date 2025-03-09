@@ -103,3 +103,115 @@
     border-radius: 5px;
 }
 
+/* Media queries for services page to match landing page flow */
+
+@media (max-width: 1024px) {
+    .service-images {
+        gap: 0.75rem;
+    }
+
+    .hero-content .orange-overlay-box {
+        width: 22rem;
+        height: 9rem;
+    }
+
+    .hero-content .main-text h1 {
+        font-size: 4.5rem;
+    }
+
+    .title-section {
+        font-size: 5rem;
+    }
+
+    .card-title {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content .text-container {
+        width: 90%;
+        right: -5%;
+        margin: 0 auto;
+        top: 40%;
+    }
+
+    .hero-content .orange-overlay-box {
+        position: absolute;
+        width: 75%;
+        height: 8rem;
+        padding: 1.5rem;
+    }
+
+    .hero-content .main-text h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .title-section {
+        font-size: 4rem;
+        padding: 1.5rem 0;
+    }
+
+    .services-container {
+        max-width: 600px;
+        margin: 0 1rem;
+        padding: 1.5rem;
+    }
+
+    .card-title {
+        font-size: 4rem;
+    }
+
+    .service-images {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-images img {
+        width: 90%;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content .orange-overlay-box {
+        height: 6rem;
+        padding: 1rem;
+    }
+
+    .hero-content .main-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .title-section {
+        font-size: 3rem;
+        padding: 1rem 0;
+    }
+
+    .card-title {
+        font-size: 2.5rem;
+    }
+
+    .services-container {
+        padding: 1rem;
+    }
+
+    .services-container ul li {
+        font-size: 0.9rem;
+    }
+}
+
+/* Fix for positioning of text container that matches landing page */
+.hero-content .text-container {
+    position: absolute;
+}
+
+/* Fix for background overlay gradient */
+.background-image .overlay-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right bottom,
+            rgba(113, 109, 105, 0.55) 0%,
+            rgba(246, 231, 216, 0.35) 100%);
+}
