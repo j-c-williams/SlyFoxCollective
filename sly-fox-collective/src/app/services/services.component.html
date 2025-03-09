@@ -1,7 +1,11 @@
 <div class="services-page-container">
 <section class="hero-section">
-    <div class="hero-image background-image">
+    <div class="hero-image background-image" *ngIf="!isMobile">
         <img src="../../assets/images/services_background_highres.jpg" alt="Elite Event">
+        <div class="overlay-gradient"></div>
+    </div>
+    <div class="mobile-background-image" *ngIf="isMobile">
+        <img src="../../assets/images/mobile_services_test.jpg" alt="Mobile Event">
         <div class="overlay-gradient"></div>
     </div>
     <div class="hero-content">
