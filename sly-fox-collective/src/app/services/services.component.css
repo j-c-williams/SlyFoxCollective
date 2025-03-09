@@ -15,6 +15,12 @@
     display: block;
 }
 
+.mobile-background-image img {
+    width: 100%;
+    display: block;
+    position: absolute;
+}
+
 .hero-content .text-container {
     right: 4%;
     top: 50%;

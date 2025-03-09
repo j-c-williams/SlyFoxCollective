@@ -52,7 +52,6 @@ export class MeetComponent implements OnInit, OnDestroy {
 
   constructor() {
     this.checkScreenSize();
-    // Register Swiper custom elements
     register();
   }
 
