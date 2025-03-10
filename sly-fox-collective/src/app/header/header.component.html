@@ -13,11 +13,13 @@
         <!-- Left Side Buttons -->
         <div class="left-buttons">
             <button [routerLink]="'/meet'" 
-                    class="nav-button">
+                    class="nav-button"
+                    (click)="toggleMenu()">
                 meet the foxes
             </button>
             <button [routerLink]="'/services'" 
-                    class="nav-button">
+                    class="nav-button"
+                    (click)="toggleMenu()">
                 services
             </button>
         </div>
@@ -34,11 +36,13 @@
         <!-- Right Side Buttons -->
         <div class="right-buttons">
             <button [routerLink]="'/gallery'" 
-                    class="nav-button">
+                    class="nav-button"
+                    (click)="toggleMenu()">
                 gallery
             </button>
             <button [routerLink]="'/connect'" 
-                    class="nav-button">
+                    class="nav-button"
+                    (click)="toggleMenu()">
                 connect
             </button>
         </div>
