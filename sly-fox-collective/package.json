@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "npm run generate:images && ng serve",
+    "build": "npm run generate:images && ng build",
+    "generate:images": "node generate-image-list.js",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:sly-fox-collective": "node dist/sly-fox-collective/server/server.mjs"

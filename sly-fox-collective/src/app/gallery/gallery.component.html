@@ -3,8 +3,27 @@
   <p>Our Gallery page is currently under construction!</p>
   <p>If you would like to see what we have been up to, please take a look at our Instagram!</p>
 </div>
+
 <section class="social-links-section">
   <div class="social-links-wrapper">
     <a href="https://www.instagram.com/slyfoxcollective/" class="social-link instagram">Instagram</a>
   </div>
 </section>
+
+<div class="gallery-container">
+  <ng-container *ngIf="loading; else galleryContent">
+    <p>Loading images...</p>
+  </ng-container>
+
+  <ng-template #galleryContent>
+    <div>
+      <div class="gallery-item" *ngFor="let image of images">
+        <img [src]="image" alt="Gallery image">
+      </div>
+    </div>
+
+    <ng-template #noImages>
+      <div class="no-images">No images found in gallery.</div>
+    </ng-template>
+  </ng-template>
+</div>
