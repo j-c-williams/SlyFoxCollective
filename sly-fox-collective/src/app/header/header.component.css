@@ -44,7 +44,7 @@
 .logo-container {
     padding: 0rem;
     position: relative;
-    z-index: 1001;
+    z-index: 1000;
 }
 
 .mobile-logo-container {

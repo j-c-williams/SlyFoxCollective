@@ -10,12 +10,10 @@ fs.readdir(imagesDir, (err, files) => {
     return;
   }
 
-  // Filter for image files
   const imageFiles = files.filter(file =>
     /\.(jpg|jpeg|png|gif|webp|svg)$/i.test(file)
   );
 
-  // Create paths relative to the 'assets' folder for Angular to access
   const imagePaths = imageFiles.map(file =>
     `assets/gallery_images/${file}`
   );
