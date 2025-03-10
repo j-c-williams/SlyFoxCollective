@@ -1,29 +1,37 @@
 <div class="gallery-page-container">
-  <h1>Gallery</h1>
-  <p>Our Gallery page is currently under construction!</p>
-  <p>If you would like to see what we have been up to, please take a look at our Instagram!</p>
+  <div class="gallery-container">
+    <ng-container *ngIf="loading; else galleryContent">
+      <p class="loading">Loading images...</p>
+    </ng-container>
+    <ng-template #galleryContent>
+      <ng-container *ngIf="images && images.length > 0; else noImages">
+        <div class="gallery-item" *ngFor="let image of images; let i = index">
+          <img [src]="image" alt="Gallery image" loading="lazy" (click)="openLightbox(i)">
+        </div>
+      </ng-container>
+      <ng-template #noImages>
+        <div class="no-images">No images found in gallery.</div>
+      </ng-template>
+    </ng-template>
+  </div>
+
+  <div class="lightbox" [class.active]="lightboxOpen" (click)="closeLightbox()">
+    <div class="lightbox" [class.active]="lightboxOpen" (click)="closeLightbox()">
+      <div #lightboxContent class="lightbox-content" (click)="$event.stopPropagation()">
+        <img *ngIf="selectedImage" [src]="selectedImage" alt="Lightbox image">
+        <button class="close-button" (click)="closeLightbox()">×</button>
+        <button class="nav-button prev" *ngIf="images && images.length > 1" (click)="prevImage()">&#10094;</button>
+        <button class="nav-button next" *ngIf="images && images.length > 1" (click)="nextImage()">&#10095;</button>
+      </div>
+    </div>
 </div>
 
 <section class="social-links-section">
+  <div>
+    <p>Want to see what else we've been up to? Press the button below to see our Instagram!</p>
+  </div>
   <div class="social-links-wrapper">
     <a href="https://www.instagram.com/slyfoxcollective/" class="social-link instagram">Instagram</a>
   </div>
 </section>
 
-<div class="gallery-container">
-  <ng-container *ngIf="loading; else galleryContent">
-    <p>Loading images...</p>
-  </ng-container>
-
-  <ng-template #galleryContent>
-    <div>
-      <div class="gallery-item" *ngFor="let image of images">
-        <img [src]="image" alt="Gallery image">
-      </div>
-    </div>
-
-    <ng-template #noImages>
-      <div class="no-images">No images found in gallery.</div>
-    </ng-template>
-  </ng-template>
-</div>
