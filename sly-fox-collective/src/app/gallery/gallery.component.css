@@ -1,13 +1,14 @@
 .gallery-page-container {
-  font-family: 'Quicksand', sans-serif;
   color: #333;
   text-align: center;
   background: #eddec5;
-  padding: 2rem 0;
+  padding: 0;
 }
 
 .title {
   font-family: 'Alfath';
+  font-size: 4rem;
+  padding-top: 1rem;
 }
 
 .social-links-wrapper {
@@ -145,7 +146,6 @@
   right: 10px;
 }
 
-/* Add cursor pointer to gallery images */
 .gallery-item img {
   cursor: pointer;
 }
@@ -154,6 +154,9 @@
   .gallery-item {
     flex: 0 0 calc(50% - 16px);
     max-width: calc(50% - 16px);
+  }
+  .title {
+    font-size: 3rem;
   }
 }
 
